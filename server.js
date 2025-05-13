@@ -23,6 +23,7 @@ import path from 'path';
 import errorHandlerMiddleware from './middleware/errorHandlerMiddleware.js';
 import { authenticateUser } from './middleware/authMiddleware.js';
 
+
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_API_KEY,
@@ -66,6 +67,7 @@ const port = process.env.PORT || 5100;
 try {
   await mongoose.connect(process.env.MONGO_URL);
   app.listen(port, () => {
+
     console.log(`server running on PORT ${port}...`);
   });
 } catch (error) {
